@@ -1,0 +1,405 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0a0a0a;
+    font-family: 'Rubik', sans-serif;
+    color: #ffffff;
+    padding: 0 16px 80px 16px;
+}
+
+.app-container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Tema Hitam Merah */
+:root {
+    --red: #e11d2c;
+    --red-dark: #a01520;
+    --red-glow: rgba(225, 29, 44, 0.3);
+    --dark-card: #111111;
+    --dark-bg: #0a0a0a;
+    --gray-text: #aaaaaa;
+}
+
+.red-text {
+    color: var(--red);
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0 16px 0;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, #fff, var(--red));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.tagline {
+    font-size: 0.7rem;
+    color: var(--gray-text);
+    font-weight: 400;
+}
+
+.saldo-card {
+    background: var(--dark-card);
+    padding: 8px 16px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid rgba(225, 29, 44, 0.3);
+}
+
+.saldo-card i {
+    color: var(--red);
+    font-size: 1.2rem;
+}
+
+.saldo-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.saldo-label {
+    font-size: 0.65rem;
+    color: var(--gray-text);
+}
+
+.saldo-nominal {
+    font-weight: 800;
+    font-size: 0.9rem;
+}
+
+/* Slider Section */
+.slider-wrapper {
+    margin: 10px 0 30px 0;
+    position: relative;
+}
+
+.slider-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 24px;
+    gap: 12px;
+    scrollbar-width: none;
+}
+
+.slider-container::-webkit-scrollbar {
+    display: none;
+}
+
+.slide {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.slide-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, #000, transparent);
+    padding: 20px 16px 12px;
+    font-weight: 800;
+    font-size: 1rem;
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: #333;
+    border-radius: 50%;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.dot.active {
+    width: 24px;
+    border-radius: 10px;
+    background: var(--red);
+}
+
+/* Section */
+.section {
+    margin-top: 28px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.section-header h2 {
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.section-header h2 i {
+    color: var(--red);
+    margin-right: 6px;
+}
+
+.see-all {
+    color: var(--red);
+    font-size: 0.75rem;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.back-btn {
+    background: transparent;
+    border: 1px solid var(--red);
+    color: var(--red);
+    padding: 6px 12px;
+    border-radius: 30px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.back-btn:hover {
+    background: var(--red);
+    color: white;
+}
+
+/* Game Grid */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.game-card {
+    background: var(--dark-card);
+    border-radius: 20px;
+    padding: 12px 6px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid #1f1f1f;
+}
+
+.game-card:hover {
+    border-color: var(--red);
+    transform: translateY(-3px);
+}
+
+.game-card img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    margin-bottom: 8px;
+}
+
+.game-card h4 {
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.game-card p {
+    font-size: 0.6rem;
+    color: var(--gray-text);
+    margin-top: 4px;
+}
+
+/* Nominal Grid */
+.nominal-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.nominal-item {
+    background: var(--dark-card);
+    padding: 14px;
+    text-align: center;
+    border-radius: 16px;
+    border: 1px solid #222;
+    cursor: pointer;
+    transition: 0.2s;
+    font-weight: 800;
+}
+
+.nominal-item.selected {
+    border-color: var(--red);
+    background: rgba(225, 29, 44, 0.15);
+    box-shadow: 0 0 0 1px var(--red);
+}
+
+/* Payment List */
+.payment-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.payment-item {
+    background: var(--dark-card);
+    padding: 14px 18px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+    border: 1px solid #222;
+    transition: 0.2s;
+}
+
+.payment-item i {
+    font-size: 1.8rem;
+    width: 40px;
+}
+
+.payment-item.selected {
+    border-color: var(--red);
+    background: rgba(225, 29, 44, 0.1);
+}
+
+.payment-info {
+    flex: 1;
+    font-weight: 700;
+}
+
+.payment-desc {
+    font-size: 0.7rem;
+    color: var(--gray-text);
+}
+
+.order-summary {
+    background: rgba(225, 29, 44, 0.1);
+    padding: 14px;
+    border-radius: 16px;
+    margin: 16px 0;
+    font-size: 0.9rem;
+    border-left: 3px solid var(--red);
+}
+
+.btn-pay {
+    width: 100%;
+    background: var(--red);
+    border: none;
+    padding: 16px;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 10px;
+}
+
+.btn-pay:hover {
+    background: var(--red-dark);
+    transform: scale(0.98);
+}
+
+/* Modal QRIS */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #1a1a1a;
+    padding: 24px;
+    border-radius: 32px;
+    width: 85%;
+    max-width: 320px;
+    text-align: center;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.qris-placeholder {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 16px 0;
+}
+
+.btn-confirm {
+    background: var(--red);
+    border: none;
+    padding: 12px;
+    border-radius: 40px;
+    color: white;
+    font-weight: bold;
+    width: 100%;
+    cursor: pointer;
+}
+
+/* Toast */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.9);
+    background: #222;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    opacity: 0;
+    transition: 0.2s;
+    pointer-events: none;
+    z-index: 1100;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+}
