@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>KiosGamer Pro | Top Up Game Termurah</title>
+    <!-- Google Fonts Rubik -->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- CSS Custom -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app-container">
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <h1>KIOS<span class="red-text">GAMER</span></h1>
+            <p class="tagline">Top Up • Voucher • Item Game</p>
+        </div>
+        <div class="saldo-card">
+            <i class="fas fa-wallet"></i>
+            <div class="saldo-info">
+                <span class="saldo-label">Saldo Anda</span>
+                <span class="saldo-nominal" id="userSaldo">Rp 0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner Slider (Geser otomatis + sentuh) -->
+    <div class="slider-wrapper">
+        <div class="slider-container" id="sliderContainer">
+            <div class="slide">
+                <img src="assets/images/banner1.jpg" alt="Promo 1">
+                <div class="slide-caption">Diskon 20% All Game!</div>
+            </div>
+            <div class="slide">
+                <img src="assets/images/banner2.jpg" alt="Promo 2">
+                <div class="slide-caption">Cashback 10% via QRIS</div>
+            </div>
+            <div class="slide">
+                <img src="assets/images/banner3.jpg" alt="Promo 3">
+                <div class="slide-caption">Free Diamond MLBB</div>
+            </div>
+        </div>
+        <div class="slider-dots" id="sliderDots"></div>
+    </div>
+
+    <!-- Kategori Game Populer -->
+    <section class="section">
+        <div class="section-header">
+            <h2><i class="fas fa-gamepad"></i> Top Up Game</h2>
+            <a href="#" class="see-all">Lihat Semua <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="game-grid" id="gameGrid">
+            <!-- Data game akan diisi oleh JS -->
+        </div>
+    </section>
+
+    <!-- Pilih Nominal Top Up -->
+    <section class="section" id="nominalSection" style="display: none;">
+        <div class="section-header">
+            <h2><i class="fas fa-tag"></i> Pilih Nominal <span id="selectedGameName"></span></h2>
+            <button class="back-btn" id="backToGameBtn"><i class="fas fa-arrow-left"></i> Kembali</button>
+        </div>
+        <div class="nominal-grid" id="nominalGrid"></div>
+    </section>
+
+    <!-- Metode Pembayaran -->
+    <section class="section" id="paymentSection" style="display: none;">
+        <div class="section-header">
+            <h2><i class="fas fa-credit-card"></i> Metode Pembayaran</h2>
+        </div>
+        <div class="payment-list" id="paymentList"></div>
+        <div class="order-summary" id="orderSummary"></div>
+        <button class="btn-pay" id="payNowBtn">Bayar Sekarang <i class="fas fa-arrow-right"></i></button>
+    </section>
+
+    <!-- Modal QRIS -->
+    <div class="modal" id="qrisModal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h3><i class="fas fa-qrcode"></i> Scan QRIS</h3>
+            <div class="qris-placeholder" id="qrisCode">
+                <i class="fas fa-qrcode" style="font-size: 180px; color: #000;"></i>
+                <p>QRIS Dummy - Scan untuk bayar</p>
+            </div>
+            <p class="modal-info">Arahkan kamera ke QR Code atau upload bukti transfer</p>
+            <button class="btn-confirm" id="confirmPaymentBtn">Konfirmasi Pembayaran</button>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">Pesan</div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
